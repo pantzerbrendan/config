@@ -8,8 +8,6 @@ ZSHDDIR="${HOME}/.config/zsh.d"
 HISTFILE="${ZDOTDIR}/.zsh_history"
 HISTSIZE='10000'
 SAVEHIST="${HISTSIZE}"
-# keyboard backlight
-echo 2 | sudo tee /sys/class/leds/asus::kbd_backlight/brightness
 
 # env
 export EDITOR=nano
@@ -474,19 +472,19 @@ alias q=exit                     # QUICKKEY - like vim
 
 ## Debian/Debian-based.  Ubuntu, Mint, Crunchbang, etc
 
-alias ainstall='sudo apt-get install'
-alias aremove='sudo apt-get remove'
-alias system_update='sudo aptitude safe-upgrade'
-alias afind='aptitude search'
-alias affind='apt-file search'
-alias afupdate='sudo apt-file update'
-alias aupdate='sudo aptitude update'
+# alias ainstall='sudo apt-get install'
+# alias aremove='sudo apt-get remove'
+# alias system_update='sudo aptitude safe-upgrade'
+# alias afind='aptitude search'
+# alias affind='apt-file search'
+# alias afupdate='sudo apt-file update'
+# alias aupdate='sudo aptitude update'
 #alias addppa='add-apt-repository'
-alias orphand='sudo deborphan | xargs sudo apt-get -y remove --purge'
-alias cleanup='sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get clean && sudo apt-get remove && orphand'
-alias updatedb='updatedb'
-alias lessswap="sysctl vm.swappiness=10"
-alias moreswap="sysctl vm.swappiness=100"
+# alias orphand='sudo deborphan | xargs sudo apt-get -y remove --purge'
+# alias cleanup='sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get clean && sudo apt-get remove && orphand'
+# alias updatedb='updatedb'
+# alias lessswap="sysctl vm.swappiness=10"
+# alias moreswap="sysctl vm.swappiness=100"
 
 ## Fedora/Fuduntu/etc
 
@@ -515,20 +513,20 @@ alias moreswap="sysctl vm.swappiness=100"
 
 ## Archlinux
 
-#alias aurinst='sudo yaourt -S'
-#alias aurpkg='sudo pacman -U'
-#alias pinstall='sudo pacman -S'
-#alias premove='sudo pacman -R'
-#alias system_update='sudo pacman -Syu'
-#alias aurfind='sudo yaourt -Ss'
-#alias pfind='sudo pacman -Ss'
-#alias pinfo='sudo pacman -Si'
-#alias installedby='sudo pacman -Ql'
-#alias whatfrom='sudo pacman -Qo'
-#alias showorphan='sudo pacman -Qdt'
-#alias removeuseless='sudo pacman -Rsnc $(pacman -Qdqt)'
-#alias pacupgrade='sh ~/.mirrorfix'
-#alias giveswhat='sudo pkgfile --list'
+alias aurinst='sudo yaourt -S'
+alias aurpkg='sudo pacman -U'
+alias pinstall='sudo pacman -S'
+alias premove='sudo pacman -R'
+alias system_update='sudo pacman -Syu'
+alias aurfind='sudo yaourt -Ss'
+alias pfind='sudo pacman -Ss'
+alias pinfo='sudo pacman -Si'
+alias installedby='sudo pacman -Ql'
+alias whatfrom='sudo pacman -Qo'
+alias showorphan='sudo pacman -Qdt'
+alias removeuseless='sudo pacman -Rsnc $(pacman -Qdqt)'
+alias pacupgrade='sh ~/.mirrorfix'
+alias giveswhat='sudo pkgfile --list'
 ## Misc
 alias edit='vim'
 alias sublim='sublime'
@@ -577,7 +575,7 @@ if [ -f ~/.alert ]; then cat ~/.alert; fi
 # System Information:
 #------------------------------------------////
 clear
-echo -e "${white}";toilet -f future --metal "Welcome, " $USER;
+#echo -e "${white}";toilet -f future --metal "Welcome, " $USER;
 echo -ne "${blue}Today is:\t\t${darkgray}" `date`; echo ""
 echo -e "${blue}Kernel Information: \t${darkgray}" `uname -smr`
 echo -ne "${purple}";upinfo;echo ""
